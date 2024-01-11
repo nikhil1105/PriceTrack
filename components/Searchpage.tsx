@@ -27,7 +27,7 @@ const Searchpage = (params: any) => {
                         key={e.id}
                     >
                         <div key={e.id} className=" hover:bg-slate-200 border-slate-200 m-4 w-full  p-4 border rounded-lg  flex flex-row items-center  justify-items-start ">
-                            <div className=" flex items-center  mx-8 rounded-xl ">
+                            <div className=" flex items-center mx-8 rounded-xl ">
                                 <Image src={e.img} alt={e.title} width={200} height={250} className=" object-contain max-h-[250px] " />
                             </div>
                             <div className=" text-black text-[20px] font-bold m-4 ">

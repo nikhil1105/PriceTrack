@@ -44,7 +44,7 @@ export default async function amazonpagescraper(params:any) {
         const outOfStock = $('#availability span').text().trim().toLowerCase() === 'currently unavailable';
 
 
-        const tab1 = $('div.a-section.a-spacing-small.a-spacing-top-small span')
+        const tab1 = $('div.a-section.a-spacing-small.a-spacing-top-small table span')
         const tab1arr: any = [[],[]]
 
         const tab2 = $('#featurebullets_feature_div span')
