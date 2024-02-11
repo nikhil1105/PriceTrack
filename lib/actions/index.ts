@@ -5,6 +5,8 @@ import { revalidatePath } from "next/cache";
 import { getAveragePrice, getHighestPrice, getLowestPrice } from "../util";
 import { connecttoDB } from "../mongoose";
 import amazonpagescraper from "../scraper/amazonpagescraper";
+import { User } from "@/types";
+import { generateEmailBody, sendEmail } from "../nodemailer";
 export default async function Scrapeandstore(url: string) {
    if (!url) {
       return;
@@ -24,8 +26,8 @@ export default async function Scrapeandstore(url: string) {
    }
 }
 
-export async function getProduct(params : any) {
-   
+export async function getProduct(params: any) {
+
    try {
       const data = await amazonpagescraper(params);
       return data
@@ -36,40 +38,40 @@ export async function getProduct(params : any) {
    }
 }
 
-export async function getProductbyid(params : any) {
-   
+export async function getProductbyid(params: any) {
+
    try {
       connecttoDB();
-            
+
       const data = await amazonpagescraper(params);
-      
+
       if (!data) return null;
 
       let product = data;
-      
-      const exitingproduct = await IProduct.findOne({link:data.link})
+
+      const exitingproduct = await IProduct.findOne({ link: data.link })
 
       if (exitingproduct) {
-         const updatedpricehistory : any = [
+         const updatedpricehistory: any = [
             ...exitingproduct.pricehistory,
-            {price:data.price}
+            { price: data.price }
          ]
 
          product = {
             ...data,
-            pricehistory:updatedpricehistory,
-            low:getLowestPrice(updatedpricehistory),
-            high:getHighestPrice(updatedpricehistory),
-            avg:getAveragePrice(updatedpricehistory)
+            pricehistory: updatedpricehistory,
+            low: getLowestPrice(updatedpricehistory),
+            high: getHighestPrice(updatedpricehistory),
+            avg: getAveragePrice(updatedpricehistory)
          }
       }
 
-      const newProduct = await IProduct.findOneAndUpdate({link:data.link},
-         product,{upsert:true,new:true}
+      const newProduct = await IProduct.findOneAndUpdate({ link: data.link },
+         product, { upsert: true, new: true }
       )
 
       return newProduct
-         
+
 
    } catch (error) {
       console.log('error', error);
@@ -89,4 +91,47 @@ export async function getallproducts() {
    }
 }
 
+export async function Track(params: any, userEmail: string) {
+   try {
 
+      const db = await connecttoDB()
+
+      console.log('in track');
+
+
+      var product = await IProduct.findOne({ link: params.link })
+
+      console.log('product');
+
+      if (!product) {
+          product = await IProduct.findOneAndUpdate({ link: params.link },
+            params, { upsert: true, new: true }
+         )
+
+      }
+      console.log(product);
+
+      const isuser = product.user.some((user: User) => user.email === userEmail)
+
+
+      if (!isuser) {
+         product.user.push({
+            email: userEmail
+         })
+
+
+         await product.save();
+
+         const emailContent = await generateEmailBody(product, 'WELCOME')
+         console.log(emailContent);
+
+         await sendEmail(emailContent, [userEmail])
+      }
+      // 
+
+   } catch (error) {
+      console.log(error);
+
+   }
+
+}

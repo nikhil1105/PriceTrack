@@ -9,11 +9,13 @@ import Model from "./Model";
 const Productpage = ({ data }: { data: any }) => {
 
     const product = data
-    console.log(product);
+    
 
     if (!data) {
         return <p>Loading...</p>;
     }
+    console.log(product);
+    
 
     return (
         <div className= " flex flex-col gap-16 flex-wrap px-6 md:px-20 py-24">
@@ -79,7 +81,7 @@ const Productpage = ({ data }: { data: any }) => {
                     </div>
                     <div className="py-6 w-full">
                         <div>
-                            <Model />
+                            <Model  data={data} />
                         </div>
                         <div>
                             <button className=" w-[50%] bg-black mx-auto flex items-center justify-center gap-3 min-w-[200px] my-4 py-4 px-4 hover:bg-opacity-70 rounded-[30px] text-white text-lg font-semibold " >
@@ -113,8 +115,8 @@ const Productpage = ({ data }: { data: any }) => {
 
 
                                     return <tr key={rowIndex} >
-                                        <td className="border-t-0 px-6 align-middle border-l-0 border-r-0  whitespace-nowrap p-4 " >{row}</td>
-                                        <td className="border-t-0 px-6 align-middle border-l-0 border-r-0  whitespace-nowrap p-4 ">{product.detail[0][1][rowIndex]}</td>
+                                        <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 p-4 " >{row}</td>
+                                        <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 p-4 ">{product.detail[0][1][rowIndex]}</td>
                                     </tr>
 
                                 }
@@ -148,14 +150,16 @@ const Productpage = ({ data }: { data: any }) => {
                         Details
                     </h2>
                     <div className="m-4 " >
-                        <table className="items-center bg-transparent w-full border-collapse " >
+                        <table style={{
+                            
+                        }} className="items-center bg-transparent w-full border-collapse " >
                             <tbody>
                                 {product.detail[2][0].map((row: any, rowIndex: any) => {
 
 
                                     return <tr key={rowIndex} >
-                                        <td className="border-t-0 px-6 align-middle border-l-0 border-r-0  whitespace-nowrap p-4 " >{row}</td>
-                                        <td className="border-t-0 px-6 align-middle border-l-0 border-r-0  whitespace-nowrap p-4 ">{product.detail[2][1][rowIndex]}</td>
+                                        <td className="border-t-0 px-6 align-middle border-l-0 border-r-0  p-4 " >{row}</td>
+                                        <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 p-4 ">{product.detail[2][1][rowIndex]}</td>
                                     </tr>
 
                                 }

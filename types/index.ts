@@ -8,22 +8,22 @@ export type PriceHistoryItem = {
   
   export type Product = {
     _id?: string;
-    url: string;
+    link: string;
     currency: string;
     image: string;
     title: string;
-    currentPrice: number;
-    originalPrice: number;
-    priceHistory: PriceHistoryItem[] | [];
-    highestPrice: number;
-    lowestPrice: number;
-    averagePrice: number;
-    discountRate: number;
+    price: number;
+    preprice: number;
+    pricehistory: PriceHistoryItem[] | [];
+    high: number;
+    low: number;
+    avg: number;
+    deal: number;
     description: string;
     category: string;
-    reviewsCount: number;
-    stars: number;
-    isOutOfStock: Boolean;
+    review: number;
+    star: number;
+    isoutofstock: Boolean;
     users?: User[];
   };
   

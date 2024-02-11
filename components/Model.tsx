@@ -3,15 +3,21 @@ import React, { FormEvent, Fragment } from 'react'
 import { useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import Image from 'next/image'
+import { Track } from '@/lib/actions'
 
-const Model = () => {
-    let [isOpen, setIsOpen] = useState(true)
+const Model = ({ data }: { data: any }) => {
+    let [isOpen, setIsOpen] = useState(false)
     let [issubmit, setIssubmit] = useState(false)
     let [email, setemail] = useState('')
+    
 
     const handlesubmit =async (e:FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         setIssubmit(true)
+        await Track(data,email)
+        setIssubmit(false)
+        setemail('')
+        closemodel()
         
     }
 
@@ -78,7 +84,7 @@ const Model = () => {
                                         height={18}
                                         
                                         />
-                                <input required type="email" value={email} onChange={(e)=>setemail(e.target.value)} placeholder="PriceTrack@gmail.com" id="email" className='w-full' />
+                                <input required type="email" value={email} onChange={(e)=>setemail(e.target.value)} placeholder="PriceTrack@gmail.com" id="email" className='flex-1 pl-1 border-none text-gray-500 text-base focus:outline-none border border-gray-300 rounded-[27px] shadow-xs' />
 
                                 </div>
                                 <button type='submit' className=' px-5 py-3 text-white text-base font-semibold border border-black bg-black rounded-lg mt-8'>
