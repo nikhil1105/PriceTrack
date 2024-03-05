@@ -41,6 +41,11 @@ export async function GET() {
                 scrapProduct, currentProduct
             )
                 
+            if(emailNotifType && updatedProduct.users.length > 0)
+            {
+                
+            }
+
         }))
 
     } catch (error) {

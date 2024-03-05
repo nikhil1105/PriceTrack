@@ -101,7 +101,7 @@ export async function Track(params: any, userEmail: string) {
 
       var product = await IProduct.findOne({ link: params.link })
 
-      console.log('product');
+      console.log('product',product);
 
       if (!product) {
           product = await IProduct.findOneAndUpdate({ link: params.link },
@@ -109,7 +109,7 @@ export async function Track(params: any, userEmail: string) {
          )
 
       }
-      console.log(product);
+      console.log('new product',product);
 
       const isuser = product.user.some((user: User) => user.email === userEmail)
 

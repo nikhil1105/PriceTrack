@@ -19,7 +19,7 @@ export default function  Content  () {
         <div className=" my-20 w-[600px] h-[800px] px-[20px] py-[50px] bg-slate-200 rounded-xl">
         <Carousel 
         showThumbs={false}
-        autoPlay={false}
+        autoPlay={true}
         infiniteLoop
         interval={2000}
         showArrows={false}
