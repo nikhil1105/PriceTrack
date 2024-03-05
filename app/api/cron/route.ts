@@ -3,7 +3,7 @@ import { connecttoDB } from "@/lib/mongoose";
 import amazonpagescraper from "@/lib/scraper/amazonpagescraper";
 import { getAveragePrice, getEmailNotifType, getHighestPrice, getLowestPrice } from "@/lib/util";
 
-export default async function GET() {
+export default async function rt() {
     // try {
     //     connecttoDB()
 
