@@ -43,8 +43,11 @@ export async function GET() {
                 
             if(emailNotifType && updatedProduct.users.length > 0)
             {
+                return
                 
             }
+
+            return 
 
         }))
 
