@@ -8,7 +8,7 @@ const Ipage = ({params})=>{
     const data = useAppSelector((state)=>state.datareducer.value)
     const product = data[params.id]
     return(
-        <div>
+        <div className='flex flex-col items-center justify-center' >
              <Navbar/>
             
             <Product data={product}/>

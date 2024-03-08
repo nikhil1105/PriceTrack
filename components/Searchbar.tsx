@@ -26,7 +26,7 @@ function Searchbar() {
     />
     <button type="submit"
     disabled={keyword===""}
-    className=' bg-slate-400 font-bold text-white p-3 w-[120px] mx-5 rounded-lg text-[20px]'
+    className=' bg-slate-400 font-bold text-white p-3  sm:w-[120px] ml-5 sm:mx-5 rounded-lg text-[20px]'
     
     >{loading?'loading...':'Search'}</button>
     

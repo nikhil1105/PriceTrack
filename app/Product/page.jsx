@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbarp';
 
 function page() {
   return (
-    <div>
+    <div className='flex flex-col items-center justify-center' >
       <Navbar/>
       <Productpage/>
     </div>
