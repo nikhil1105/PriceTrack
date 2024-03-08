@@ -93,7 +93,7 @@ const Productpage = ({ data }: { data: any }) => {
                                     width={22}
 
                                 />
-                                <Link href={product?.link} className="text-base text-white" >Buy Now</Link>
+                                <Link href={product?.link} target="_blank" className="text-base text-white" >Buy Now</Link>
                             </button>
                         </div>
                     </div>
