@@ -17,11 +17,11 @@ function Searchbar() {
     return(
         <form
         onSubmit={handlesubmit}
-        className='text-[20px] w-full flex '>
+        className='sm:text-[20px] w-full flex '>
     <input
     value={keyword}
     onChange={(e)=>(setKeyword(e.target.value))}
-     className='border-gray-300 border rounded-lg p-4 h-[50px] shadow-x5 focus:outline-none flex-1 w-full w-min-[200px]'
+     className='border-gray-300 border rounded-lg p-4 sm:h-[50px] shadow-x5 focus:outline-none flex-1 w-full sm:w-min-[200px]'
     type="text" placeholder='Search Your Product'
     />
     <button type="submit"

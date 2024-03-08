@@ -20,7 +20,7 @@ const HNavbar = () => {
             alt="logo"
           />
 
-          <p className="">
+          <p className="max-sm:text-[20px]">
             Price<span className=' text-red-600'>Track</span>
           </p>
         </Link>

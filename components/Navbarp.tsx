@@ -20,7 +20,7 @@ const Navbar = () => {
             alt="logo"
           />
 
-          <p className="">
+          <p className="max-sm:text-[20px]">
             Price<span className=' text-red-600'>Track</span>
           </p>
         </Link>
@@ -34,19 +34,19 @@ const Navbar = () => {
               
               src='/assets/icons/empty-cart.png'
               alt='search'
-              className="object-contain w-12 sm:w-12 "
+              className="object-contain w-8 sm:w-12 "
             />
             
             
             <img 
               src='/assets/icons/userred.png'
               alt='user'
-              className="object-contain w-12 sm:w-12 "
+              className="object-contain w-8 sm:w-12 "
             />
           
         </div>
       </nav>
-      <div className='md:hidden px-10 w-full'>
+      <div className='md:hidden sm:px-10 w-full'>
           <Searchbar />
         </div>
     </header>
