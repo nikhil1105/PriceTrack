@@ -12,7 +12,7 @@ const Productpage = ({ data }: { data: any }) => {
 
 
     if (!data) {
-        return <div className=" flex bg-[#fef7f2] items-center justify-center w-[100vw] h-[100vh]" > <img src="../assets/gif/ani.gif" className=" w-[100vh] h-[100vh]  object-cover " /> </div>
+        return <div className=" flex bg-[#fef7f2] items-center justify-center w-[100vw] h-[100vh]" > <img src="../assets/gif/ani.gif" className=" w-[100vw] h-full object-cover " /> </div>
     }
 
 
