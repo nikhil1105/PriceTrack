@@ -1,6 +1,7 @@
 'use client'
 import Product from '@/components/Product';
 import { useAppSelector } from '@/lib/redux/store';
+import Navbar from '@/components/Navbarp';
 
 const Ipage = ({params})=>{
     
@@ -8,6 +9,7 @@ const Ipage = ({params})=>{
     const product = data[params.id]
     return(
         <div>
+            <Navbar/>
             <Product data={product}/>
         </div>
     );

@@ -8,7 +8,7 @@ const navIcons = [
 
   ]
 
-const HNavbar = () => {
+const Navbar = () => {
   return (
     <header className="w-full">
       <nav className="flex justify-between px-[16px] py-[24px] md:py-[50px] xl:py-[24px] text-[30px] gap-1 font-bold">
@@ -25,26 +25,32 @@ const HNavbar = () => {
           </p>
         </Link>
         
+        <div className=' hidden md:block px-10 w-full'>
+          <Searchbar />
+        </div>
 
         <div className="flex items-center gap-8">
             <img 
               
               src='/assets/icons/empty-cart.png'
               alt='search'
-              className="object-contain w-8 sm:w-12 "
+              className="object-contain w-12 sm:w-12 "
             />
             
             
             <img 
               src='/assets/icons/userred.png'
               alt='user'
-              className="object-contain w-8 sm:w-12"
+              className="object-contain w-12 sm:w-12 "
             />
           
         </div>
       </nav>
+      <div className='md:hidden px-10 w-full'>
+          <Searchbar />
+        </div>
     </header>
   )
 }
 
-export default HNavbar
+export default Navbar
