@@ -20,7 +20,7 @@ const Home = () => {
       />
     </div>
 
-    <p className='text-[80px] font-bold my-4'>
+    <p className='text-[60px]  font-bold my-4'>
     Unleash the Power of <span className='text-red-500'>PriceTrack</span>
     </p>
     <p className='text-[20px] my-8'>Powerful, self-serve product and growth analytics to help you convert, engage, and retain more.</p>

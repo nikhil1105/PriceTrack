@@ -25,9 +25,9 @@ const Navbar = () => {
           </p>
         </Link>
         
-        {/* <div className=' hidden md:block px-10 w-full'>
+        <div className=' hidden md:block px-10 w-full'>
           <Searchbar />
-        </div> */}
+        </div>
 
         <div className="flex items-center gap-8">
             <img 
