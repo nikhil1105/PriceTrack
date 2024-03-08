@@ -34,11 +34,7 @@ const Home = () => {
     </div>
     </div>
     </section>
-    <section>
-      <div>
-        Tranding
-      </div>
-    </section>
+    
     </>
   )
 }

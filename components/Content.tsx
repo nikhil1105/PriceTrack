@@ -16,7 +16,7 @@ const element = [
 export default function  Content  () {
 
     return(
-        <div className=" my-20 w-[600px] h-[800px] px-[20px] py-[50px] bg-slate-200 rounded-xl">
+        <div className=" my-20 w-[600px] sm:h-[800px] px-[20px] py-[50px] bg-slate-200 rounded-xl">
         <Carousel 
         showThumbs={false}
         autoPlay={true}

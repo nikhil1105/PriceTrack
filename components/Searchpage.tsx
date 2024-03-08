@@ -47,7 +47,7 @@ const Searchpage = (params: any) => {
                                 </div>
                                 
                                 <div className="flex flex-wrap gap-2">
-                                    <p className=" text-[34px] max-sm:text-[12px] text-black font-bold ">
+                                    <p className=" text-[34px] max-sm:text-[18px] text-black font-bold ">
                                         ₹ {e.price}
                                     </p>
                                     <p className=" text-[21px] max-sm:text-[12px] text-black opacity-50 line-through font-bold ">
