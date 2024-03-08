@@ -16,17 +16,20 @@ const Searchpage = (params: any) => {
         dispatch(createData(dataarr))
     }, [])
 
+    if (!dataarr) {
+        return <div className=" flex bg-[#fef7f2] items-center justify-center w-[100vw] h-[100vh]" > <img src="../assets/gif/ani.gif" className=" w-[100vh] h-[100vh]  object-cover " /> </div>
+    }
 
 
     return (
-        <div className="flex flex-col ">
+        <div className="flex flex-col  ">
             {
                 dataarr?.map((e: any) => (
                     <Link href={`/IProducts/${e.id}`}
-                        className="flex justify-start m-2"
+                        className="flex  justify-start m-2"
                         key={e.id}
                     >
-                        <div key={e.id} className=" hover:bg-slate-200 border-slate-200 my-4 w-full  py-4 border rounded-lg  flex flex-row items-center  justify-items-start ">
+                        <div key={e.id} className=" bg-white hover:bg-slate-200 border-slate-200 my-4 w-full  py-4 border rounded-lg  flex flex-row items-center  justify-items-start ">
                             <div className=" flex items-center mx-8 rounded-xl ">
                                 <Image src={e.img} alt={e.title} width={200} height={250} className=" object-contain max-h-[250px] " />
                             </div>

@@ -12,9 +12,8 @@ const Productpage = ({ data }: { data: any }) => {
 
 
     if (!data) {
-        return <div className=" flex items-center justify-center w-[100vw] h-[70vh]" > <img src="../assets/gif/ani.gif" className=" h-[70vh] object-cover " /> </div>
+        return <div className=" flex bg-[#fef7f2] items-center justify-center w-[100vw] h-[100vh]" > <img src="../assets/gif/ani.gif" className=" w-[100vh] h-[100vh]  object-cover " /> </div>
     }
-    console.log(product);
 
 
     return (
@@ -22,8 +21,8 @@ const Productpage = ({ data }: { data: any }) => {
 
 
 
-            <div className="flex items-center justify-center gap-28 xl:flex-row flex-col">
-                <div className="flex-grow xl:max-w-[50%] h-fit max-w-fit p-16 border border-[#CDDBFF] rounded-[17px]">
+            <div className="flex  items-center justify-center gap-28 xl:flex-row flex-col">
+                <div className =" bg-white flex-grow xl:max-w-[50%] h-fit max-w-fit p-16 border border-[#CDDBFF] rounded-[17px]">
                     <Image src={product?.img} alt={product?.title} width={580} height={400} className="mx-auto" />
                 </div>
                 <div className="flex1 flex flex-col">
