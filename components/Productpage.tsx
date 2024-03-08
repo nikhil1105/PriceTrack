@@ -1,5 +1,4 @@
 'use client'
-
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -10,17 +9,17 @@ import Navbar from "./Navbarp";
 const Productpage = ({ data }: { data: any }) => {
 
     const product = data
-    
+
 
     if (!data) {
-        return <p>Loading...</p>;
+        return <div className="w-full h-full" > <img src="../assets/gif/ani.gif" className="w-full h-full" /> </div>
     }
     console.log(product);
-    
+
 
     return (
-        <div className= " flex flex-col items-center justify-center  flex-wrap  py-24">
-           
+        <div className=" flex flex-col items-center justify-center  flex-wrap  py-24">
+
 
 
             <div className="flex items-center justify-center gap-28 xl:flex-row flex-col">
@@ -83,7 +82,7 @@ const Productpage = ({ data }: { data: any }) => {
                     </div>
                     <div className="py-6 w-full">
                         <div>
-                            <Model  data={data} />
+                            <Model data={data} />
                         </div>
                         <div>
                             <button className=" w-[50%] bg-black mx-auto flex items-center justify-center gap-3 min-w-[200px] my-4 py-4 px-4 hover:bg-opacity-70 rounded-[30px] text-white text-lg font-semibold " >
@@ -105,7 +104,7 @@ const Productpage = ({ data }: { data: any }) => {
 
             </div>
             <div className="" >
-                <div className={` ${product.detail[0][0].length == 0 ? 'hidden' : ''} ${product.detail[0][1].length == 0 ? 'hidden' : ''  }`} >
+                <div className={` ${product.detail[0][0].length == 0 ? 'hidden' : ''} ${product.detail[0][1].length == 0 ? 'hidden' : ''}`} >
                     <h2 className="font-bold">
                         Product Description
                     </h2>
@@ -134,18 +133,18 @@ const Productpage = ({ data }: { data: any }) => {
                     <h2 className="font-bold">
                         About this item
                     </h2>
-                    
-                        <div className="m-4 " >
 
-                            {product.detail[1].map((row: any, rowIndex: any) => {
+                    <div className="m-4 " >
 
-                                return rowIndex !== product.detail[1].length - 1 && <li className="px-4 maxw-[80vw] py-2" key={rowIndex}>{row}</li>
-                            }
+                        {product.detail[1].map((row: any, rowIndex: any) => {
 
-                            )}
+                            return rowIndex !== product.detail[1].length - 1 && <li className="px-4 maxw-[80vw] py-2" key={rowIndex}>{row}</li>
+                        }
 
-                        </div>
-                    
+                        )}
+
+                    </div>
+
                 </div>
                 <div className={`${product.detail[2][0].length == 0 ? 'hidden' : ''} ${product.detail[2][1].length == 0 ? 'hidden' : ''} `}>
                     <h2 className="font-bold">
@@ -153,7 +152,7 @@ const Productpage = ({ data }: { data: any }) => {
                     </h2>
                     <div className="m-4 " >
                         <table style={{
-                            
+
                         }} className="items-center bg-transparent w-full border-collapse " >
                             <tbody>
                                 {product.detail[2][0].map((row: any, rowIndex: any) => {
