@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Priceinfocard from "./Priceinfocard";
 import Model from "./Model";
+import Navbar from "./Navbarp";
 
 const Productpage = ({ data }: { data: any }) => {
 
@@ -18,11 +19,12 @@ const Productpage = ({ data }: { data: any }) => {
     
 
     return (
-        <div className= " flex flex-col gap-16 flex-wrap px-6 md:px-20 py-24">
+        <div className= " flex flex-col items-center justify-center  flex-wrap  py-24">
+           
 
 
-            <div className="flex gap-28 xl:flex-row flex-col">
-                <div className="flex-grow xl:max-w-[50%] max-w-fit py-16 border border-[#CDDBFF] rounded-[17px]">
+            <div className="flex items-center justify-center gap-28 xl:flex-row flex-col">
+                <div className="flex-grow xl:max-w-[50%] h-fit max-w-fit p-16 border border-[#CDDBFF] rounded-[17px]">
                     <Image src={product?.img} alt={product?.title} width={580} height={400} className="mx-auto" />
                 </div>
                 <div className="flex1 flex flex-col">

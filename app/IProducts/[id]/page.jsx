@@ -9,7 +9,8 @@ const Ipage = ({params})=>{
     const product = data[params.id]
     return(
         <div>
-            <Navbar/>
+             <Navbar/>
+            
             <Product data={product}/>
         </div>
     );
