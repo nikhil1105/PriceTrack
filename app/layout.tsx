@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className='sm:px-[30px] xl:px-36'>
+      <body className='px-[30px] xl:px-36'>
         
         <main className="max-w-10xl mx-auto">
           
