@@ -7,16 +7,19 @@ import { connecttoDB } from "../mongoose";
 import amazonpagescraper from "../scraper/amazonpagescraper";
 import { User } from "@/types";
 import { generateEmailBody, sendEmail } from "../nodemailer";
+import flipkartsrchscraper from "../scraper/flipkartsrchscraper";
 export default async function Scrapeandstore(url: string) {
    if (!url) {
       return;
    }
 
    try {
-      const data = await amazonsrchscraper(url);
+      const data = await flipkartsrchscraper(url);
+      console.log('flipkartsrchscraper');
+      
 
       if (!data) {
-         console.log('data not found');
+         console.log('  data not found');
          return;
       }
 
