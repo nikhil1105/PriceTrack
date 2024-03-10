@@ -4,6 +4,9 @@ import * as cheerio from "cheerio";
 
 export default async function amazonsrchscraper(url: string) {
     if (!url) return;
+    let mainurl =decodeURIComponent(url)
+    url = 'https://www.amazon.in/s?k='+(mainurl.slice(-1)=='+'?mainurl.slice(0,-1):mainurl)
+
     const username = String(process.env.BRIGHT_DATA_USERNAME)
     const password = String(process.env.BRIGHT_DATA_PASSWORD)
     const port = 22225

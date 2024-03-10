@@ -14,7 +14,8 @@ export default async function Scrapeandstore(url: string) {
    }
 
    try {
-      const data = await flipkartsrchscraper(url);
+      
+      const data = await amazonsrchscraper(url);
       console.log('flipkartsrchscraper');
       
 

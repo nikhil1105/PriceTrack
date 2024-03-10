@@ -5,9 +5,8 @@ import Navbar from '@/components/Navbarp';
 
 const Spage = async({params})=>{
 
-    let url =decodeURIComponent(params.id)
-    let mainurl = 'https://www.amazon.in/s?k='+(url.slice(-1)=='+'?url.slice(0,-1):url)
-    const data = await Scrapeandstore(mainurl)
+    
+    const data = await Scrapeandstore(params.id)
     
     return(
         <>
