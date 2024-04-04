@@ -9,37 +9,38 @@ import { User } from "@/types";
 import { generateEmailBody, sendEmail } from "../nodemailer";
 import flipkartsrchscraper from "../scraper/flipkartsrchscraper";
 import filpkartpagescraper from "../scraper/filpkartpagescraper";
-
-
 export default async function Scrapeandstore(url: string) {
    if (!url) {
-     return;
+      return;
    }
- 
-   const TIMEOUT = 10000; // 10 seconds timeout in milliseconds
- 
+
    try {
-     const [data, error] :any = await Promise.race([
-       Promise.all([amazonsrchscraper(url), flipkartsrchscraper(url)]),
-       new Promise((resolve, reject) => setTimeout(reject, TIMEOUT, 'Timeout reached')),
-     ]);
- 
-     if (error) {
-       console.error('Scraping timed out:', error);
-       // Handle timeout gracefully (e.g., display error message, retry)
-       return []; // or some default value
-     }
- 
-     const arrayOfObjects = data.flat().map((obj:any, index:any) => {
-       return { ...obj, id: index + 1 };
+      
+      const data1 = await amazonsrchscraper(url);
+      //const data2 = await flipkartsrchscraper(url)
+
+      
+
+      const data = data1//?.concat(data2)
+
+      if (!data) {
+         console.log('data not found');
+         return;
+      }
+
+      const arrayOfObjects = data.map((obj, index) => {
+         return { ...obj, id: index + 1 };
      });
- 
-     return arrayOfObjects;
+
+
+
+      return arrayOfObjects ;
+
+
    } catch (error: any) {
-     throw new Error(`Failed to create/update: ${error.message}`);
+      throw new Error(`Failed to create/update: ${error.message}`);
    }
- }
- 
+}
 
 export async function getProduct(params: any) {
 
