@@ -17,11 +17,11 @@ export default async function Scrapeandstore(url: string) {
    try {
       
       const data1 = await amazonsrchscraper(url);
-      const data2 = await flipkartsrchscraper(url)
+      //const data2 = await flipkartsrchscraper(url)
 
       
 
-      const data = data1?.concat(data2)
+      const data = data1//?.concat(data2)
 
       if (!data) {
          console.log('data not found');
