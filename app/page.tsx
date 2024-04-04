@@ -3,7 +3,6 @@ import Image from "next/image";
 import Searchbar from "../components/Searchbar";
 import Content from "../components/Content";
 import HNavbar from '@/components/Navbar';
-import LoginForm from "@/components/LoginForm"
 
 const Home = () => {
   return (
