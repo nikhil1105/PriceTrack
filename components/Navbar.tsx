@@ -12,8 +12,6 @@ const navIcons = [
 
 
 const HNavbar = () => {
-  const { data: session } = useSession();
-  console.log(session);
   
   return (
     <header className="w-full">
@@ -32,30 +30,7 @@ const HNavbar = () => {
         </Link>
         
 
-        <div className="flex items-center gap-8">
-       
-            {
-              session?
-              <Link href='/Profile' className='cursor-pointer' >
-              
-              <img 
-                src='/assets/icons/userred.png'
-                alt='user'
-                className="object-contain w-8 sm:w-12 "
-              />
-            </Link>:
-            <Link href='/login' className='cursor-pointer' >
-              
-            <img 
-              src='/assets/icons/userred.png'
-              alt='user'
-              className="object-contain w-8 sm:w-12 "
-            />
-          </Link>
-
-            }
-          
-        </div>
+        
       </nav>
     </header>
   )

@@ -1,5 +1,4 @@
 import Navbar from '@/components/Navbarp'
-import { AuthProvider } from "./Providers";
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, Space_Grotesk } from 'next/font/google'
@@ -26,11 +25,9 @@ export default function RootLayout({
       <body className='px-[30px] bg-[#fef7f2] xl:px-36'>
         
         <main className="max-w-10xl mx-auto">
-          <AuthProvider>
           <ReduxProvider>
           {children}
           </ReduxProvider>
-          </AuthProvider>
         </main>
 
         

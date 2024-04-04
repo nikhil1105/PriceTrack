@@ -8,10 +8,9 @@ import { useSession } from 'next-auth/react'
 
 
 const Model = ({ data }: { data: any }) => {
-    const  session:any = useSession();
     let [isOpen, setIsOpen] = useState(false)
     let [issubmit, setIssubmit] = useState(false)
-    let [email, setemail] = useState(session?.data?.user?.email)
+    let [email, setemail] = useState('')
     
 
     const handlesubmit =async (e:FormEvent<HTMLFormElement>) => {
