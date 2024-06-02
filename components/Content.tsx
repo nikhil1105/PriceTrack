@@ -16,7 +16,7 @@ const element = [
 export default function  Content  () {
 
     return(
-        <div className=" my-20 w-[600px] sm:h-[800px] px-[20px] py-[50px] bg-slate-200 rounded-xl">
+        <div className=" my-20 w-[600px] sm:h-[500px] h-[350px] px-[20px] py-[50px] bg-slate-200 rounded-xl">
         <Carousel 
         showThumbs={false}
         autoPlay={true}
@@ -27,12 +27,12 @@ export default function  Content  () {
         >
              {
                 element.map((e)=>(
-                    <Image
+                    <img
                     src={e.src}
                     alt={e.alt}
-                    width={600}
-                    height={600}
-                    className=" object-contain"
+                    // width={600}
+                    // height={600}
+                    className=" sm:w-[400px] sm:h-[400px] w-[250px] h-[250px] mb-8 object-contain"
                     key={e.alt}
                     />
                 ))

@@ -13,11 +13,11 @@ const Home = () => {
       <HNavbar />
       {loading ? (
         <div className="h-[100vh] flex justify-center items-start">
-          <div><img src="/assets/gif/spin.svg" alt="" /></div>
+          <div><img src="/assets/gif/spin.svg" alt="" />Scraping Data Please Wait...</div>
         </div>
       ) : (
         <section className=" tracking-wider leading-tight">
-          <div className=" xl:flex items-center xl:h-[800px]">
+          <div className=" xl:flex items-center h-[350px] xl:h-[500px]">
             <div>
               <div>
                 <div className="flex p-1">
@@ -37,8 +37,7 @@ const Home = () => {
                   <span className="text-red-500">PriceTrack</span>
                 </p>
                 <p className="sm:text-[20px] text-[15px] my-8">
-                  Powerful, self-serve product and growth analytics to help you
-                  convert, engage, and retain more.
+                  Powerful and real time price tracker for ecommerce website like amazon and flipkart.
                 </p>
               </div>
               <Searchbar lodading={(e: boolean) => setLoading(e)} />

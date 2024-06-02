@@ -71,17 +71,17 @@ const Searchpage = (params: any) => {
   if (loading) {
     return (
         <div className="h-[100vh] flex justify-center items-start">
-        <div><img src="/assets/gif/spin.svg" alt="" /></div>
+        <div><img src="/assets/gif/spin.svg" alt="" />Scraping Data Please Wait...</div>
       </div>
     );
   }
 
   return (
     <div className="flex flex-col  ">
-      <div className=" m-4 flex justify-center w-full gap-10">
+      <div className=" m-4 flex justify-center  w-full gap-10">
         <div className="">
           <label htmlFor="dropdown1">Sort BY :</label>
-          <select id="dropdown1" value={selectedOption} onChange={handleChange}>
+          <select id="dropdown1" value={selectedOption}  onChange={handleChange}>
             <option value="option1">Price Low to High</option>
             <option value="option2">Price Hight to Low</option>
             <option value="option3">Review</option>

@@ -14,6 +14,7 @@ const Productpage = ({ data }: { data: any }) => {
       <div className="h-[100vh] flex justify-center items-start">
         <div>
           <img src="/assets/gif/spin.svg" alt="" />
+          Scraping Data Please Wait...
         </div>
       </div>
     );
