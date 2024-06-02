@@ -66,7 +66,7 @@ const Searchpage = (params: any) => {
 
     setProducts(sortedProducts);
 }
-  }, [dataarr, selectedOption, selectedCompany]);
+  }, [loading,dataarr, selectedOption, selectedCompany]);
 
   if (loading) {
     return (
