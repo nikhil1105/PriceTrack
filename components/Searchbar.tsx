@@ -4,7 +4,7 @@ import { useState,FormEvent } from "react";
 import { useRouter } from 'next/navigation'
 
 interface Props {
-    lodading?:(e:boolean)=>void
+    lodading:(e:boolean)=>void
 }
 
 function Searchbar(props:Props) {
